@@ -12,5 +12,7 @@
     </head>
     <body>
         <strong>Tomcat run successfully</strong>
+        <br>
+        <a href="/customer/list" >Go to /customer/list</a>
     </body>
 </html>

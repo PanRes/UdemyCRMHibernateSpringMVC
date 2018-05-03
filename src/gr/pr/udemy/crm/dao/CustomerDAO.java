@@ -7,12 +7,11 @@ import java.util.List;
 
 public interface CustomerDAO {
 	
-	@Transactional
 	List<Customer> getAllCustomers();
 	
-	@Transactional
 	Customer getCustomerById(int id);
 	
-	@Transactional
 	Customer deleteCustomerById(int id);
+	
+	void saveCustomer(Customer customer);
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: pressos
@@ -9,8 +10,41 @@
 <html>
 	<head>
 		<title>List of Customers</title>
+
+		<link type="text/css" rel="stylesheet"
+			  href="${pageContext.request.contextPath}/resources/css/style.css" />
+
 	</head>
 	<body>
-		List of Customers - coming soon ...
+		<div id="wrapper">
+			<div id="header">
+				<h2>CRM - Customer Relationship Manager</h2>
+			</div>
+		</div>
+
+		<div id="container">
+			<div id="content">
+
+				<input type="button" value="Add Customer"
+					   onclick="window.location.href='showFormForAdd'; return false;"/>
+
+				<table>
+					<tr >
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Action</th>
+					</tr>
+					<c:forEach var="customer" items="${customers}">
+						<tr>
+							<td>${customer.firstName}</td>
+							<td>${customer.lastName}</td>
+							<td>${customer.email}</td>
+							<td><a herf="${pageContext.request.contextPath}/customer/updateCustomer">Update</a></td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
 	</body>
 </html>

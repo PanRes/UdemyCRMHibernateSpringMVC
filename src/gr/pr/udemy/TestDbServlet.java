@@ -24,7 +24,7 @@ public class TestDbServlet extends HttpServlet {
 		String pass = "7mw2Aw";
 		
 		String jdbcUrl = "jdbc:mysql://localhost:3306/udemy_crm?useSSL=false";
-		String driver = "com.mysql.jdbc.Driver";
+		String driver = "com.mysql.cj.jdbc.Driver";
 		
 		// get connection to database
 		try {

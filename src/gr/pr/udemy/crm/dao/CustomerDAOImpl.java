@@ -16,18 +16,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	@Transactional
 	public List<Customer> getAllCustomers() {
 		Session session = sessionFactory.getCurrentSession();
 		
-		Query query = session.createQuery("from Customer", Customer.class);
+		Query query = session.createQuery("from Customer order by lastName", Customer.class);
 		
 		List <Customer> customers = query.getResultList();
 		
 		return customers;
 	}
 	
-	@Transactional
 	public Customer getCustomerById(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		
@@ -36,7 +34,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return customer;
 	}
 	
-	@Transactional
 	public Customer deleteCustomerById(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		
@@ -45,6 +42,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 		session.delete(customer);
 		
 		return customer;
+	}
+	
+	public void saveCustomer(Customer customer) {
+		Session session = sessionFactory.getCurrentSession();
+		
+		session.save(customer);
 	}
 	
 	

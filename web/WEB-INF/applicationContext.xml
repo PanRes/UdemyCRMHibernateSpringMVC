@@ -20,6 +20,8 @@
 
 	<!--<util:properties id="countryOptions" location="WEB-INF/resources/countries.properties"/>-->
 
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
 	<mvc:annotation-driven/>
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -29,7 +31,7 @@
 
 	<!-- Define Database DataSource / connection pool, instead of hibernate cfg START-->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/udemy_crm?useSSL=false"/>
 		<property name="user" value="PR"/>
 		<property name="password" value="7mw2Aw"/>
