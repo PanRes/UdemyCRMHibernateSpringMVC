@@ -8,5 +8,9 @@ public interface CustomerService {
 	
 	List<Customer> getAllCustomers();
 	
-	void saveCustomer(Customer customer);
+	void saveOrUpdateCustomer(Customer customer);
+	
+	void deleteCustomer(int id);
+	
+	Customer getCustomerById(int id);
 }

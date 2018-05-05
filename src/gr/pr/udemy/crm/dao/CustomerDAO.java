@@ -1,7 +1,6 @@
 package gr.pr.udemy.crm.dao;
 
 import gr.pr.udemy.crm.entity.Customer;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ public interface CustomerDAO {
 	
 	Customer getCustomerById(int id);
 	
-	Customer deleteCustomerById(int id);
+	void deleteCustomerById(int id);
 	
-	void saveCustomer(Customer customer);
+	void saveOrUpdateCustomer(Customer customer);
 }

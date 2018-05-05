@@ -5,7 +5,6 @@ import gr.pr.udemy.crm.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 
 import java.util.List;
 
@@ -17,14 +16,22 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Transactional
 	public List<Customer> getAllCustomers() {
-		
 		return customerDAO.getAllCustomers();
-		
 	}
 	
 	@Transactional
-	public void saveCustomer(Customer customer){
-		customerDAO.saveCustomer(customer);
+	public void saveOrUpdateCustomer(Customer customer){
+		customerDAO.saveOrUpdateCustomer(customer);
+	}
+	
+	@Transactional
+	public void deleteCustomer(int id){
+		customerDAO.deleteCustomerById(id);
+	}
+	
+	@Transactional
+	public Customer getCustomerById(int id) {
+		return customerDAO.getCustomerById(id);
 	}
 	
 }
