@@ -1,6 +1,7 @@
 package gr.pr.udemy.crm.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -32,6 +33,18 @@ public class LoggingAspectCRM {
 		logger.info("====> in @Before: calling method: " + method);
 		
 		Object[] args = joinPoint.getArgs();
+		
+		for (Object arg : args) {
+			logger.info("\n====> arg: " + arg);
+		}
+	}
+	
+	@AfterReturning(pointcut = "forAppFlow()", returning = "result")
+	private void afterReturning(JoinPoint joinPoint, Object result) {
+		String method = joinPoint.getSignature().toShortString();
+		logger.info("====> in @AfterReturning: from method: " + method);
+		
+		logger.info("\n====> result: " + result);
 	}
 	
 }
