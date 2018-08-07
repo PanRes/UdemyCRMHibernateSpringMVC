@@ -12,11 +12,12 @@
 		<title>List of Customers</title>
 
 		<link type="text/css" rel="stylesheet"
-			  href="${pageContext.request.contextPath}/resources/css/style.css" />
+			  href="${pageContext.request.contextPath}/WEB-INF/css/style.css" />
 
 	</head>
 	<body>
-		<div id="wrapper">
+
+	<div id="wrapper">
 			<div id="header">
 				<h2>CRM - Customer Relationship Manager</h2>
 			</div>
