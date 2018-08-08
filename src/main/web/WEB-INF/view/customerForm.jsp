@@ -12,13 +12,12 @@
 		<title>Add Customer</title>
 
 		<link rel="stylesheet" type="text/css"
-				href="${pageContext.request.contextPath}/css/style.css">
+				href="${pageContext.request.contextPath}/resources/css/style.css">
 
 		<link rel="stylesheet" type="text/css"
-				href="${pageContext.request.contextPath}/css/add-customer-style.css">
+				href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
 	</head>
 	<body>
-	Test: ${pageContext.request.contextPath}
 		<div id="wrapper">
 			<div id="header">
 				<h2>CRM - Customer Relationship Manager Add</h2>

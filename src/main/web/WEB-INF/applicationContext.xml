@@ -24,7 +24,7 @@
 
 	<!--<util:properties id="countryOptions" location="WEB-INF/resources/countries.properties"/>-->
 
-	<mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	<mvc:annotation-driven/>
 
